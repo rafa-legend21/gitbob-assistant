@@ -1,0 +1,63 @@
+# GitBob Assistant Configuration File
+# Copy this file to ~/.gitbob/config.yaml and customize as needed
+
+ibm_bob:
+  # IBM Bob API configuration
+  # Set IBM_BOB_API_KEY environment variable or specify here
+  api_key: ${FMq72sTULUh1_f25NR7Qjd23IrsTKxnXj_sAKUYX7A72}
+  endpoint: https://api.ibm.com/bob/v1
+  model: bob-large
+  timeout: 30
+  max_retries: 3
+
+git:
+  # Git configuration
+  default_branch: main
+  branch_prefixes:
+    - feature/
+    - bugfix/
+    - hotfix/
+    - chore/
+    - docs/
+    - refactor/
+
+commit:
+  # Commit message configuration
+  conventional_commits: true
+  max_subject_length: 72
+  max_body_length: 100
+  include_scope: true
+  types:
+    - feat
+    - fix
+    - docs
+    - style
+    - refactor
+    - test
+    - chore
+
+pr:
+  # Pull request configuration
+  template: default
+  include_checklist: true
+  auto_link_issues: true
+  sections:
+    - Summary
+    - Changes
+    - Testing
+    - Related Issues
+
+cache:
+  # Cache configuration
+  enabled: true
+  ttl: 3600  # Time to live in seconds (1 hour)
+  directory: ~/.gitbob/cache
+  max_size_mb: 50
+
+output:
+  # Output formatting
+  color: true
+  verbose: false
+  show_diff: true
+
+# Made with Bob
